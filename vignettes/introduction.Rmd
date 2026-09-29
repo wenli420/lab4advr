@@ -1,0 +1,64 @@
+---
+title: "Lab 4: Introduction to linreg"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Lab 4: Introduction to linreg}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## 1.Introduction
+
+This vignette provides a brief introduction to the `linreg()` function and shows how to use the methods available for objects of class `linreg`.
+
+## 2.Load the package
+
+```{r setup}
+library(lab4advr)
+```
+## 3.Fit a linear regression model
+
+In this example, we use the `iris` dataset to fit a linear regression
+```{r}
+data(iris)
+
+#model <- linreg(Petal.Length~Sepal.Width+Sepal.Length, data=iris)
+model <- linreg(Petal.Length~Species, data = iris)
+```
+
+## 4.Coefficients
+The estimated regression coefficients can be extracted using coef()
+```{r}
+coef(model)
+```
+
+## 5.Residuals
+The residuals can be obtained using resid().
+```{r}
+resid(model)
+```
+
+## 6.Predicted values
+The fitted values can be obtained using pred()
+```{r}
+pred(model)
+```
+
+## 7.Summary
+A summary of the model can be displayed using summary().
+```{r}
+summary(model)
+```
+
+## 8.Diagnostic plots
+Diagnostic plots can be produced using plot().
+```{r, warning=FALSE, message=FALSE}
+plot(model)
+```
