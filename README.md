@@ -1,9 +1,9 @@
 # Advanced R Lab4 Package
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/wenli420/lab4advr/releases)
-![License](https://img.shields.io/badge/license-MIT-green)
+[![Version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/wenli420/lab4advr)
+![License](https://img.shields.io/badge/license-MIT-green)(https://github.com/wenli420/lab4advr/blob/main/LICENSE)
 [![R](https://img.shields.io/badge/R-package-blue)](https://www.r-project.org/)
-[![GitHub Actions](https://github.com/wenli420/lab4advr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/wenli420/lab4advr/actions/workflows/R-CMD-check.yaml)
+[![GitHub Actions](https://github.com/wenli420/lab4advr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/wenli420/lab4advr/tree/main/.github/workflows
 
 Implement a custom linear regression model in pure R.
 
@@ -76,9 +76,4 @@ plot(model)
 
 ## 6. Issues
 
-##### 1. Calculating t-values and p-values
-##### 2. Custom generic functions
-##### 3. The `NAMESPACE` file must be updated
-##### 4. Store original function call
-##### 5. Plot handling outliers
-##### 6. Vignette local-install requirement
+
