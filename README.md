@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/wenli420/lab4advr/blob/main/LICENSE)
 [![R](https://img.shields.io/badge/R-package-blue)](https://www.r-project.org/)
 [![R-CMD-check](https://github.com/wenli420/lab4advr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/wenli420/lab4advr/actions/workflows/R-CMD-check.yaml)
-[![pipeline status](https://gitlab.liu.se/qiayu183/mylinreg/badges/main/pipeline.svg)](https://gitlab.liu.se/qiayu183/mylinreg/-/pipelines)
+[![GitLab Pipeline](https://img.shields.io/badge/GitLab-Pipeline-orange?logo=gitlab)](https://gitlab.liu.se/qiayu183/mylinreg/-/pipelines)
 
 Implement a custom linear regression model in pure R.
 
