@@ -4,10 +4,12 @@
 \alias{coef.linreg}
 \title{Extract regression coefficients}
 \usage{
-\method{coef}{linreg}(x)
+\method{coef}{linreg}(object, ...)
 }
 \arguments{
-\item{x}{An object of class "linreg".}
+\item{object}{An object of class "linreg".}
+
+\item{...}{Not used.}
 }
 \value{
 A named vector of regression coefficients.

@@ -11,12 +11,16 @@ Authors@R: c(
   )
 Description: Implements ordinary least squares linear regression from scratch using linear algebra.
   The package uses an object-oriented system to support S3 methods including print(),
-  summary(), plot(), coef(), resid() and pred(). A vignette demonstrates regression
+  summary(), plot(), coef(), residuals() and pred(). A vignette demonstrates regression
   analysis with the iris dataset.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Config/roxygen2/version: 8.1.0
+Imports:
+    stats,
+    ggplot2,
+    rlang
 Suggests: 
     knitr,
     rmarkdown,

@@ -4,10 +4,12 @@
 \alias{pred}
 \title{Extract predicted values}
 \usage{
-pred(x)
+pred(object, ...)
 }
 \arguments{
-\item{x}{An object.}
+\item{object}{An object.}
+
+\item{...}{Not used.}
 }
 \value{
 Predicted values.

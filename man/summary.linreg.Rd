@@ -4,10 +4,12 @@
 \alias{summary.linreg}
 \title{Summarize a linreg object}
 \usage{
-\method{summary}{linreg}(x)
+\method{summary}{linreg}(object, ...)
 }
 \arguments{
-\item{x}{An object of class "linreg".}
+\item{object}{An object of class "linreg".}
+
+\item{...}{Not used.}
 }
 \value{
 A summary of the fitted regression model.

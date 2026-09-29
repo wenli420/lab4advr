@@ -12,6 +12,8 @@
 #' @examples
 #' model <- linreg(Petal.Length ~ Sepal.Width + Sepal.Length, iris)
 #'
+#' @importFrom stats aggregate median model.matrix pt
+#' @importFrom rlang .data
 #' @export
 linreg <- function(formula, data){
   # 1. function sturcture

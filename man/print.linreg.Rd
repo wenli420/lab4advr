@@ -4,10 +4,12 @@
 \alias{print.linreg}
 \title{Print a linreg object}
 \usage{
-\method{print}{linreg}(x)
+\method{print}{linreg}(x, ...)
 }
 \arguments{
 \item{x}{An object of class "linreg".}
+
+\item{...}{Not used.}
 }
 \value{
 The linreg object invisibly.

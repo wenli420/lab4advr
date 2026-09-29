@@ -3,10 +3,11 @@
 #' Prints the model call and estimated coefficients.
 #'
 #' @param x An object of class "linreg".
+#' @param ... Not used.
 #'
 #' @return The linreg object invisibly.
 #' @export
-print.linreg<-function(x){
+print.linreg<-function(x, ...){
   # 2.1 give action of print
   # 2.1.1 print coefficients
   cat("Call:\n")
@@ -15,6 +16,7 @@ print.linreg<-function(x){
   # 2.1.2 print coefficient names
   cat("\nCoefficients:\n")
   print(x$beta_hat)
+  invisible(x)
 }
 
 #' Plot a linreg object
@@ -22,10 +24,11 @@ print.linreg<-function(x){
 #' Creates diagnostic plots for a fitted linear regression model.
 #'
 #' @param x An object of class "linreg".
+#' @param ... Not used.
 #'
 #' @return Two diagnostic plots.
 #' @export
-plot.linreg <- function(x) {
+plot.linreg <- function(x, ...) {
   # 2.2 plot the following two plots using ggplot2
   # 2.2.1 create dataframe
   plot_data <- data.frame(
@@ -65,8 +68,8 @@ plot.linreg <- function(x) {
   p1 <- ggplot2::ggplot(
     plot_data,
     ggplot2::aes(
-      x = fitted,
-      y = residuals
+      x = .data[["fitted"]],
+      y = .data[["residuals"]]
     )
   ) +
     ggplot2::geom_point(
@@ -75,8 +78,8 @@ plot.linreg <- function(x) {
     ggplot2::geom_line(
       data = median_residuals,
       ggplot2::aes(
-        x = fitted,
-        y = residuals
+        x = .data[["fitted"]],
+        y = .data[["residuals"]]
       ),
       colour = "red",
       linewidth = 0.5
@@ -102,8 +105,8 @@ plot.linreg <- function(x) {
   p2 <- ggplot2::ggplot(
     plot_data,
     ggplot2::aes(
-      x = fitted,
-      y = scale_location
+      x = .data[["fitted"]],
+      y = .data[["scale_location"]]
     )
   ) +
     ggplot2::geom_point(
@@ -112,8 +115,8 @@ plot.linreg <- function(x) {
     ggplot2::geom_line(
       data = median_scale,
       ggplot2::aes(
-        x = fitted,
-        y = scale_location
+        x = .data[["fitted"]],
+        y = .data[["scale_location"]]
       ),
       colour = "red",
       linewidth = 0.5
@@ -150,35 +153,26 @@ plot.linreg <- function(x) {
 #'
 #' Returns the residuals from a linreg object.
 #'
-#' @param x An object of class "linreg".
+#' @param object An object of class "linreg".
+#' @param ... Not used.
 #'
 #' @return A numeric vector of residuals.
 #' @export
-residuals.linreg <- function(x) {
-  return(x$e_hat)
+residuals.linreg <- function(object, ...) {
+  return(object$e_hat)
 }
 
-#' Extract residuals
-#'
-#' Returns the residuals from a linreg object.
-#'
-#' @param x An object of class "linreg".
-#'
-#' @return A numeric vector of residuals.
-#' @export
-resid.linreg <- function(x) {
-  return(x$e_hat)
-}
 
 #' Extract predicted values
 #'
 #' Generic function for extracting predicted values.
 #'
-#' @param x An object.
+#' @param object An object.
+#' @param ... Not used.
 #'
 #' @return Predicted values.
 #' @export
-pred <- function(x) {
+pred <- function(object, ...) {
   UseMethod("pred")
 }
 
@@ -186,41 +180,45 @@ pred <- function(x) {
 #'
 #' Returns the fitted values from a linreg object.
 #'
-#' @param x An object of class "linreg".
+#' @param object An object of class "linreg".
+#' @param ... Not used.
 #'
 #' @return A numeric vector of predicted values.
 #' @export
-pred.linreg <- function(x) {
-  return(x$y_hat)
+pred.linreg <- function(object, ...) {
+  return(object$y_hat)
 }
 
 #' Extract regression coefficients
 #'
 #' Returns the estimated coefficients from a linreg object.
 #'
-#' @param x An object of class "linreg".
+#' @param object An object of class "linreg".
+#' @param ... Not used.
 #'
 #' @return A named vector of regression coefficients.
 #' @export
-coef.linreg <- function(x) {
-  return(x$beta_hat)
+coef.linreg <- function(object, ...) {
+  return(object$beta_hat)
 }
+
 #' Summarize a linreg object
 #'
 #' Prints the coefficient estimates, standard errors, t-values,
 #' p-values and residual standard error.
 #'
-#' @param x An object of class "linreg".
+#' @param object An object of class "linreg".
+#' @param ... Not used.
 #'
 #' @return A summary of the fitted regression model.
 #' @export
-summary.linreg <- function(x) {
+summary.linreg <- function(object, ...) {
 
   coefficient_table <- cbind(
-    Estimate = x$beta_hat,
-    `Std. Error` = sqrt(x$var_beta_diag),
-    `t value` = x$t_beta,
-    `Pr(>|t|)` = x$p_beta
+    Estimate = object$beta_hat,
+    `Std. Error` = sqrt(object$var_beta_diag),
+    `t value` = object$t_beta,
+    `Pr(>|t|)` = object$p_beta
   )
 
   cat("Coefficients:\n")
@@ -234,9 +232,9 @@ summary.linreg <- function(x) {
 
   cat(
     "\nResidual standard error:",
-    sqrt(x$sigma_hat_square),
+    sqrt(object$sigma_hat_square),
     "on",
-    x$df,
+    object$df,
     "degrees of freedom\n"
   )
 }

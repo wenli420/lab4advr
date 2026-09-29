@@ -4,10 +4,12 @@
 \alias{residuals.linreg}
 \title{Extract residuals}
 \usage{
-\method{residuals}{linreg}(x)
+\method{residuals}{linreg}(object, ...)
 }
 \arguments{
-\item{x}{An object of class "linreg".}
+\item{object}{An object of class "linreg".}
+
+\item{...}{Not used.}
 }
 \value{
 A numeric vector of residuals.

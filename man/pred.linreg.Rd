@@ -4,10 +4,12 @@
 \alias{pred.linreg}
 \title{Extract predicted values from a linreg object}
 \usage{
-\method{pred}{linreg}(x)
+\method{pred}{linreg}(object, ...)
 }
 \arguments{
-\item{x}{An object of class "linreg".}
+\item{object}{An object of class "linreg".}
+
+\item{...}{Not used.}
 }
 \value{
 A numeric vector of predicted values.
