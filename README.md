@@ -1,13 +1,21 @@
 # Advanced R Lab4 Package
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/wenli420/lab4advr)
-![License](https://img.shields.io/badge/license-MIT-green)(https://github.com/wenli420/lab4advr/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/wenli420/lab4advr/blob/main/LICENSE)
 [![R](https://img.shields.io/badge/R-package-blue)](https://www.r-project.org/)
-[![GitHub Actions](https://github.com/wenli420/lab4advr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/wenli420/lab4advr/tree/main/.github/workflows
+[![R-CMD-check](https://github.com/wenli420/lab4advr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/wenli420/lab4advr/actions/workflows/R-CMD-check.yaml)
+[![pipeline status](https://gitlab.liu.se/qiayu183/mylinreg/badges/main/pipeline.svg)](https://gitlab.liu.se/qiayu183/mylinreg/-/pipelines)
 
 Implement a custom linear regression model in pure R.
 
 ## Version 0.1.0
+
+Implement a custom linear regression model in pure R.
+
+## Peer Repository
+
+[Qianwen Yu's mylinreg repository](https://gitlab.liu.se/qiayu183/mylinreg)
+
 
 ## 1. Project Structure
 
@@ -46,20 +54,13 @@ The `R/` directory contains three main implementation files:
 - `linreg_method.R` – S3 methods for the `linreg` class
 
 
-## 3. Pipeline Status
-
-- [GitLab pipeline status](https://gitlab.liu.se/qiayu183/lab4advr/-/pipelines)
-
-- Note: we also test GitHub Actions  
-  [https://github.com/wenli420/lab4advr/actions](https://github.com/wenli420/lab4advr/actions)
-
-## 4. Installation
+## 3. Installation
 
 ```r
 devtools::install()
 ```
 
-## 5. Run Example
+## 4. Run Example
 
 ```r
 library(lab4advr)
@@ -74,6 +75,13 @@ summary(model)
 plot(model)
 ```
 
-## 6. Issues
-
-
+## 5. Issues
+1. Calculating t‑values and p‑values
+2. The issue with custom generic functions
+3. The NAMESPACE file must be updated
+4. Using match.call() to store the original call
+5. Using medians in plotting to reduce the impact of extreme values
+6. Package must be installed locally before writing the introduction
+7. S3 method compatibility issue
+8. Incorrect dependency declaration
+9. Missing documentation for ellipsis argument
